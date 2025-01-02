@@ -8,14 +8,23 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import useDeleteCandidate from "../../Admin/useDeleteCandidate";
+import { toast } from "react-toastify";
 
 const GetAllCandidates = () => {
-  const { candidates, userProfile, vote } = useContext(AuthContext);
+  const { candidates, userProfile, vote, token } = useContext(AuthContext);
   const [expandCandidateId, setExpandCandidateId] = useState(null);
   const deleteCandidate = useDeleteCandidate(); // Corrected this line
 
   const toggleExpand = (id) => {
     setExpandCandidateId((prev) => (prev === id ? null : id));
+  };
+
+  const handleVote = (candidateId) => {
+    if (!token) {
+      toast.warn("Please Login first");
+    } else {
+      vote(candidateId);
+    }
   };
 
   return (
@@ -91,7 +100,7 @@ const GetAllCandidates = () => {
                     {userProfile.role !== "admin" && (
                       <div className="flex items-center gap-2 justify-center">
                         <motion.button
-                          onClick={() => vote(candidate._id)}
+                          onClick={() => handleVote(candidate._id)}
                           className="h-5 w-5  border-green-500 border-2 rounded-full text-xl bg-white text-white"
                           whileHover={{
                             scale: 1.1,

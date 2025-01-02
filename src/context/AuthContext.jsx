@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
     } catch (error) {
       setLoading(false);
       console.error(error);
-      alert(
+      toast.error(
         error.response
           ? error.response.data.error
           : "Login failed. Please try again."
@@ -143,22 +143,22 @@ const AuthProvider = ({ children }) => {
   const vote = async (candidateId) => {
     try {
       const response = await axios.post(
-        `https://votingapp-backend-1-n1iy.onrender.com/api/candidate/vote/${candidateId}`, // Update with your actual endpoint
-        {}, // No request body is needed
+        `https://votingapp-backend-1-n1iy.onrender.com/api/candidate/vote/${candidateId}`,
+        {},
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Ensure the user is authenticated
+            Authorization: `Bearer ${token}`,
           },
         }
       );
-      console.log(response.data.message); // Success message
+      console.log(response.data.message);
       toast.success(response.data);
 
+      navigate("/");
       window.location.reload();
     } catch (error) {
       toast.warn(error.response?.data?.message);
       console.error("Error voting:", error.response?.data || error.message);
-      // alert(error.response?.data?.message || "An error occurred");
     }
   };
 
@@ -166,7 +166,6 @@ const AuthProvider = ({ children }) => {
   const voteCount = async () => {
     try {
       const response = await axios.get(`${CANDIDATE_API_END_POINT}/vote/count`);
-      console.log(response.data.voteRecord);
       setLiveVoteCount(response.data.voteRecord);
     } catch (error) {
       console.log("can't fetch vote count");

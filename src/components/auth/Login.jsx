@@ -27,47 +27,55 @@ const Login = () => {
 
   return (
     <div className="bg-[#001124] min-h-screen flex items-center justify-center p-6">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">Login</h1>
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+          Login
+        </h1>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          <Form>
+          <Form className="space-y-6">
             {/* Voter ID */}
-            <div>
-              <label className="block text-gray-700 font-medium">
+            <div className="flex flex-col">
+              <label
+                className="text-gray-700 font-medium mb-2"
+                htmlFor="voterId"
+              >
                 Voter ID
               </label>
               <Field
                 type="number"
                 name="voterId"
-                className="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="w-full border rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your voter ID"
               />
               <ErrorMessage
                 name="voterId"
                 component="div"
-                className="text-red-500 text-xs"
+                className="text-red-500 text-xs mt-1"
               />
             </div>
 
             {/* Password */}
-            <div>
-              <label className="block text-gray-700 font-medium">
+            <div className="flex flex-col">
+              <label
+                className="text-gray-700 font-medium mb-2"
+                htmlFor="password"
+              >
                 Password
               </label>
               <Field
                 type="password"
                 name="password"
-                className="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="w-full border rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your password"
               />
               <ErrorMessage
                 name="password"
                 component="div"
-                className="text-red-500 text-xs"
+                className="text-red-500 text-xs mt-1"
               />
             </div>
 
@@ -75,7 +83,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full mt-4 bg-blue-500 text-white py-1 text-sm rounded hover:bg-blue-600 transition duration-300"
+                className="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
                 disabled={loading}
               >
                 {loading ? "Logging in..." : "Login"}
