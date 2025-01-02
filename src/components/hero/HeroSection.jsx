@@ -5,7 +5,7 @@ import VoteCounts from "../voteCounts/VoteCounts";
 
 export const HeroSection = () => {
   return (
-    <div className="flex flex-col gap-2 md:flex-row bg-black justify-evenly items-center h-screen p-4">
+    <div className="flex flex-col gap-4 md:flex-row bg-black justify-evenly items-center md:h-screen p-4">
       {/* Image Section */}
       <div className="w-full md:w-1/2 h-64 md:h-full mb-6 md:mb-0">
         <img
@@ -15,7 +15,7 @@ export const HeroSection = () => {
         />
       </div>
       {/* Text Section */}
-      <div className="text-white flex flex-col justify-around h-full  gap-4 md:text-left md:w-1/2">
+      <div className="text-white flex flex-col justify-around h-full gap-4 md:text-left md:w-1/2">
         <div>
           <h3 className="text-lg md:text-2xl py-2">Be a part of Decision</h3>
           <h1 className="text-3xl md:text-5xl font-bold text-blue-500">
@@ -38,7 +38,7 @@ export const HeroSection = () => {
             </Link>
           </div>
         </div>
-        <div className="">
+        <div className="mt-6">
           <h1 className="text-2xl font-bold">Live Vote Count</h1>
           <VoteCounts />
         </div>

@@ -17,7 +17,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   const { userProfile } = useContext(AuthContext);
-  console.log(userProfile);
+
   return (
     <>
       <Routes>

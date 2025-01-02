@@ -1,8 +1,6 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="border-gray-800 border-t-2 text-gray-400 py-4 text-center">
+    <footer className="border-gray-800 border-t-2 text-gray-400 py-4 text-center mt-6">
       <p>
         &copy; {new Date().getFullYear()} Designed and Developed by
         <a href="https://www.manojbelbase.com.np/" className="text-green-400">
@@ -12,5 +10,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

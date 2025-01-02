@@ -37,7 +37,7 @@ const VoteCounts = () => {
               transition={{
                 duration: 2, // Duration of one blink cycle
                 repeat: Infinity, // Repeat infinitely
-                ease: "easeInOut", // Smooth transition
+                ease: "easeInOut",
               }}
             ></motion.div>
             <h2 className="text-base font-bold text-gray-800 mb-2">
