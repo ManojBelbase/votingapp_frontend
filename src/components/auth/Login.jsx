@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom"; // Assuming you're using react-router for navigation
+import { Link, useNavigate } from "react-router-dom"; // Assuming you're using react-router for navigation
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
@@ -69,7 +69,7 @@ const Login = () => {
               <Field
                 type="password"
                 name="password"
-                className="w-full border rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full border rounded px-4 pt-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your password"
               />
               <ErrorMessage
@@ -78,6 +78,12 @@ const Login = () => {
                 className="text-red-500 text-xs mt-1"
               />
             </div>
+            <p className="text-sm flex items-center">
+              Dont't have an account?
+              <Link to={"/register"} className="text-blue-600">
+                Register
+              </Link>
+            </p>
 
             {/* Submit Button */}
             <div>
