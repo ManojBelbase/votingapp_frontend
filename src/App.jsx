@@ -46,7 +46,7 @@ function App() {
           </>
         )}
       </Routes>
-      <ToastContainer />
+      <ToastContainer position="bottom-right" />
     </>
   );
 }

@@ -21,7 +21,7 @@ const VoteCounts = () => {
         {liveVoteCount.map((votes, index) => (
           <motion.div
             key={votes.party}
-            className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transform transition duration-300 relative cursor-pointer"
+            className="bg-white shadow-lg rounded-lg md:p-6 p-4 border border-gray-200 hover:shadow-xl transform transition duration-300 relative cursor-pointer"
             initial="hidden"
             animate="visible"
             whileHover={{ scale: 1.01 }}
@@ -40,10 +40,10 @@ const VoteCounts = () => {
                 ease: "easeInOut",
               }}
             ></motion.div>
-            <h2 className="text-base font-bold text-gray-800 mb-2">
+            <h2 className="text-base font-semibold md:font-bold text-gray-800 mb-2">
               {votes.party}
             </h2>
-            <p className="text-xl font-semibold text-blue-500">
+            <p className="md:text-xl text-lg font-semibold text-blue-500">
               {votes.count} {votes.count > 1 ? "Votes" : "Vote"}
             </p>
           </motion.div>

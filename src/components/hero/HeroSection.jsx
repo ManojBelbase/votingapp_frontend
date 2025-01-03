@@ -15,7 +15,7 @@ export const HeroSection = () => {
         />
       </div>
       {/* Text Section */}
-      <div className="text-white flex flex-col justify-around h-full gap-4 md:text-left md:w-1/2">
+      <div className="text-white flex flex-col justify-around h-full gap-6 md:text-left md:w-1/2">
         <div>
           <h3 className="text-lg md:text-2xl py-2">Be a part of Decision</h3>
           <h1 className="text-3xl md:text-5xl font-bold text-blue-500">
@@ -23,7 +23,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 mt-4 justify-center md:justify-start">
+          <div className="flex  md:flex-row gap-2 md:gap-4 mt-4 justify-center md:justify-start">
             <Link
               to={"/register"}
               className="bg-blue-600 uppercase px-6 py-2 rounded-md"

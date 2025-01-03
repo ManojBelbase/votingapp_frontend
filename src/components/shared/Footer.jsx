@@ -4,7 +4,8 @@ const Footer = () => {
       <p>
         &copy; {new Date().getFullYear()} Designed and Developed by
         <a href="https://www.manojbelbase.com.np/" className="text-green-400">
-          Manoj Belbase
+          {" "}
+          <span> </span> Manoj Belbase
         </a>
       </p>
     </footer>

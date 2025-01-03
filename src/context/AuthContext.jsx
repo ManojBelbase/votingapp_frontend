@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
     } catch (error) {
       setLoading(false);
       console.error(error);
-      alert(
+      toast.error(
         error.response
           ? error.response.data.message
           : "Registration failed. Please try again."
@@ -77,10 +77,7 @@ const AuthProvider = ({ children }) => {
       setUserProfile(response.data.data);
     } catch (error) {
       console.error("Failed to fetch profile:", error.response || error);
-      alert(
-        error.response?.data?.error ||
-          "Failed to fetch user profile. Please try again."
-      );
+
       setToken(null);
       localStorage.removeItem("vote_token");
     } finally {
@@ -112,11 +109,12 @@ const AuthProvider = ({ children }) => {
       );
       setLoading(false);
       toast.success("Password changed successfully!");
+      navigate("/");
       return response.data;
     } catch (error) {
       setLoading(false);
       console.error("Failed to change password:", error.response || error);
-      alert(
+      toast.error(
         error.response?.data?.error ||
           "Failed to change password. Please try again."
       );

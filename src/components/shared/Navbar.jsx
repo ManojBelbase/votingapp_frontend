@@ -34,7 +34,9 @@ const Navbar = () => {
   return (
     <nav className="bg-black text-white px-6 sm:px-10 py-4 flex items-center justify-between">
       {/* Logo */}
-      <h1 className="text-lg sm:text-xl font-bold">VoteApp</h1>
+      <Link to={"/"} className="text-lg sm:text-xl font-bold">
+        VoteApp
+      </Link>
 
       {/* Hamburger Menu (Mobile) */}
       <button
@@ -60,7 +62,9 @@ const Navbar = () => {
               to={item.path || "/"}
               aria-label={`Navigate to ${item.title}`}
               className={({ isActive }) =>
-                isActive ? "text-accent py-2" : "hover:text-primary py-2"
+                isActive
+                  ? "text-accent py-2 border-b"
+                  : "hover:text-primary py-2"
               }
               onClick={() => setIsMenuOpen(false)} // Close menu after clicking
             >
@@ -68,6 +72,9 @@ const Navbar = () => {
             </NavLink>
           </li>
         ))}
+        <Link to={"/login"} className="md:hidden block">
+          Login
+        </Link>
       </ul>
 
       {/* Authentication Section */}

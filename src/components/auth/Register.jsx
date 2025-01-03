@@ -12,7 +12,8 @@ const Register = () => {
       .required("Age is required")
       .positive("Age must be a positive number")
       .integer("Age must be an integer")
-      .min(19, "Age must be greater than 18"),
+      .min(19, "Age must be greater than 18")
+      .max(100, "Age must be less than 100"),
 
     email: Yup.string().email("Invalid email").required("Email is required"),
     mobile: Yup.string()
@@ -34,7 +35,7 @@ const Register = () => {
     address: "",
     voterId: "",
     password: "",
-    role: "voter", // Default empty
+    role: "voter",
   };
 
   const { register } = useContext(AuthContext);
